@@ -18,7 +18,8 @@ function getAllUsers(){
     return $stmt->fetchAll(PDO::FETCH_OBJ);
 }
 $users = getAllUsers();
-
+/////////////////////////////////////////////
+$count = $db->query("SELECT count(*) FROM user")->fetchColumn();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,6 +47,7 @@ $users = getAllUsers();
                         </td>
                 </tr>
             <?php endforeach; ?> 
+            rows count---><label><?= $count?></label>
 </body>
 </html>
 
